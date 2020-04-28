@@ -15,7 +15,7 @@ with open(helper, 'r') as f:
 data = requests.get(url).json()
 vistas = data['stats'][ayer] + data['stats'][hoy] - lag
 with open(output, 'a') as f:
-  f.write("{a},{v}".format(a=ayer, v=int(vistas)))
+  f.write("\n{a},{v}".format(a=ayer, v=int(vistas)))
 with open(helper, 'a') as f:
-  f.write("{a},{v}".format(a=hoy, v=int(data['stats'][hoy])))
+  f.write("\n{a},{v}".format(a=hoy, v=int(data['stats'][hoy])))
 
